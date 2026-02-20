@@ -28,6 +28,7 @@ use pocketmine\nbt\tag\CompoundTag;
 use MyPlot\MyPlot;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
+use bStats\PocketmineMp\Metrics;
 use function is_dir;
 use function mkdir;
 
@@ -107,6 +108,8 @@ class Loader extends PluginBase{
 	}
 
 	private function load() : void{
+		new Metrics($this, 29646);
+
 		$this->initializeDirectories();
 
 		$this->config = new ConfigData($this);
